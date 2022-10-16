@@ -34,7 +34,7 @@ public class BookController {
     }
 
     @DeleteMapping("/book/{id}")
-    public ResponseEntity<?> deleteById(@PathVariable Long id, @RequestBody Book book) {
+    public ResponseEntity<?> deleteById(@PathVariable Long id) {
         return new ResponseEntity<>(bookService.삭제하기(id), HttpStatus.OK); // 200을 응답.
     }
 }
