@@ -1,44 +1,42 @@
 import React from 'react';
-import { Container, Nav, Navbar } from 'react-bootstrap';
+import {
+  Button,
+  Container,
+  Form,
+  FormControl,
+  Nav,
+  Navbar,
+} from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
-    return (
-        <>
+  return (
+    <>
       <Navbar bg="dark" variant="dark">
         <Container>
-          <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+          <Link to="/" className="navbar-brand">
+            홈
+          </Link>
           <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#features">Features</Nav.Link>
-            <Nav.Link href="#pricing">Pricing</Nav.Link>
+            <Link to="/joinForm" className="nav-link">
+              회원가입
+            </Link>
+            <Link to="/loginForm" className="nav-link">
+              로그인
+            </Link>
+            <Link to="/saveForm" className="nav-link">
+              글쓰기
+            </Link>
           </Nav>
+          <Form className="d-flex">
+            <FormControl type="text" placeholder="Search" className="me-2" />
+            <Button variant="outline-info">Search</Button>
+          </Form>
         </Container>
       </Navbar>
       <br />
-      <Navbar bg="primary" variant="dark">
-        <Container>
-          <Navbar.Brand href="#home">Navbar</Navbar.Brand>
-          <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#features">Features</Nav.Link>
-            <Nav.Link href="#pricing">Pricing</Nav.Link>
-          </Nav>
-        </Container>
-      </Navbar>
-
-      <br />
-      <Navbar bg="light" variant="light">
-        <Container>
-          <Navbar.Brand href="#home">Navbar</Navbar.Brand>
-          <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#features">Features</Nav.Link>
-            <Nav.Link href="#pricing">Pricing</Nav.Link>
-          </Nav>
-        </Container>
-      </Navbar>
     </>
-    );
+  );
 };
 
 export default Header;
