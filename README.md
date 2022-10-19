@@ -8,7 +8,6 @@
 - Gradle
 - Lombok
 
-
 ### React
 
 - yarn add react-router-dom
@@ -23,10 +22,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 '''json
 {
-    "singleQuote": true,
-    "semi": true,
-    "tabWidth": 2,
-    "trailingComma": "all",
-    "printWidth": 80
+"singleQuote": true,
+"semi": true,
+"tabWidth": 2,
+"trailingComma": "all",
+"printWidth": 80
 }
 '''
