@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 
-const SaveForm = () => {
+const SaveForm = props => {
   const [book, setBook] = useState({
     title: '',
     author: '',
@@ -23,8 +23,21 @@ const SaveForm = () => {
       },
       body: JSON.stringify(book),
     })
-      .then()
-      .then();
+      .then(res => {
+        console.log(1, res);
+        if (res.status === 201) {
+          return res.json();
+        } else {
+          return null;
+        }
+      })
+      .then(res => {
+        if (res !== null) {
+          props.history.push('/');
+        } else {
+          alert('책 등록에 실패하였습니다.');
+        }
+      });
   };
 
   return (
